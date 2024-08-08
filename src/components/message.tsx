@@ -8,14 +8,14 @@ import { removeMessageReaction } from "../http/remove-message-reaction";
 interface MessageProps {
     id: string
     text: string
-    amoundofReactions: number
+    amountOfReactions: number
     answered?: boolean
 }
 
 export function Message({ 
     id: messageId, 
     text, 
-    amoundofReactions, 
+    amountOfReactions, 
     answered = false
 }: MessageProps) {
     const { roomId } = useParams()
@@ -65,7 +65,7 @@ export function Message({
                     className="mt-3 flex items-center gap-2 text-orange-400 text-sm font-medium hover:text-orange-500"
                 >
                   <ArrowUp className="size-4" />
-                  Curtir pergunta ({amoundofReactions})
+                  Curtir pergunta ({amountOfReactions})
                 </button>
             ) : (
                 <button 
@@ -74,7 +74,7 @@ export function Message({
                     className="mt-3 flex items-center gap-2 text-zinc-400 text-sm font-medium hover:text-zinc-300"
                 >
                     <ArrowUp className="size-4" />
-                    Curtir pergunta ({amoundofReactions})
+                    Curtir pergunta ({amountOfReactions})
                 </button>
             )}            
         </li>
